@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joney108</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#d8d8d8}
+header{
+background:#0b5d86;color:#fff;
+display:flex;justify-content:space-between;
+align-items:center;padding:14px;
+position:sticky;top:0;z-index:999}
+.logo{font-size:32px;font-weight:bold}
+.logo span{color:#39ff14}
+.icon{font-size:28px;cursor:pointer}
+
+#menu{
+position:fixed;left:-260px;top:0;
+width:250px;height:100%;
+background:#084866;
+transition:.3s;padding-top:60px;
+z-index:1000}
+#menu a{
+display:block;color:#fff;
+padding:15px;text-decoration:none;
+border-bottom:1px solid #166d96}
+#menu.show{left:0}
+#overlay{
+display:none;position:fixed;
+inset:0;background:#0008;
+z-index:900}
+#overlay.show{display:block}
+
+.search{
+background:#fff;margin:10px;
+padding:12px;border-radius:30px}
+.search input{
+border:none;width:100%;
+font-size:17px;outline:none}
+
+.banner{
+background:#fff;padding:20px;
+text-align:center}
+.banner h1{
+color:#d00000;font-size:28px}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;padding:12px}
+.btn{
+background:#0b5d86;
+color:#fff;text-decoration:none;
+text-align:center;padding:16px;
+border-radius:10px;font-size:18px}
+
+.card{
+background:#fff;
+margin:12px;padding:12px;
+border-radius:14px}
+.thumb{
+width:100%;height:200px;
+object-fit:cover;border-radius:10px}
+.card h3{margin-top:10px}
+.action{
+display:flex;gap:10px;
+margin-top:12px}
+.hd,.cv{
+flex:1;text-align:center;
+padding:12px;color:#fff;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold}
+.hd{background:#d40000}
+.cv{background:#228b22}
+
+#converter{
+display:none;
+background:#fff;
+margin:12px;padding:15px;
+border-radius:12px}
+select,input[type=file],button{
+width:100%;
+padding:12px;
+margin-top:10px}
+button{
+background:#0b5d86;
+color:#fff;
+border:none;
+border-radius:6px}
+
+footer{
+background:#0b5d86;
+color:#fff;
+text-align:center;
+padding:18px;
+margin-top:20px}
+</style>
+</head>
+
+<body>
+
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<div id="menu">
+<a href="#">🏠 Home</a>
+<a href="#">📺 Bangla Serials</a>
+<a href="#">⭐ Latest Upload</a>
+<a href="#">🎬 Movies</a>
+<a href="#">📞 Contact</a>
+</div>
+
+<header>
+<div class="icon" onclick="toggleMenu()">☰</div>
+<div class="logo">Joney<span>108</span></div>
+<div class="icon">🔍</div>
+</header>
+
+<div class="search">
+<input placeholder="Search Episode...">
+</div>
+
+<div class="banner">
+<h1>Joney108</h1>
+<p>Bangla Entertainment Download Hub</p>
+</div>
+
+<div class="grid">
+<a class="btn">Zee Bangla</a>
+<a class="btn">Star Jalsha</a>
+<a class="btn">Enterr10 Bangla</a>
+<a class="btn">Colors Bangla</a>
+<a class="btn">Sun Bangla</a>
+<a class="btn">Latest Upload</a>
+</div>
+
+<div class="card">
+<img class="thumb" src="https://picsum.photos/500/300">
+
+<h3>Episode 01</h3>
+
+<p>HD • ZIP • 180 MB</p>
+
+<div class="action">
+<a href="#" class="hd">HD Download</a>
+<a href="#" class="cv" onclick="openConverter();return false;">Convert</a>
+</div>
+</div>
+
+<div id="converter">
+<h3>Video Converter</h3>
+
+<input type="file" accept="video/*">
+
+<select>
+<option>480p</option>
+<option>720p HD</option>
+<option>1080p Full HD</option>
+</select>
+
+<button onclick="convertVideo()">Start Convert</button>
+
+<p id="status"></p>
+</div>
+
+<footer>
+© 2026 Joney108
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+document.getElementById("overlay").classList.toggle("show");
+}
+
+function openConverter(){
+document.getElementById("converter").style.display="block";
+document.getElementById("converter").scrollIntoView({behavior:"smooth"});
+}
+
+function convertVideo(){
+document.getElementById("status").innerHTML=
+"Converting... (Demo UI)";
+}
+</script>
+
+</body>
+</html>
