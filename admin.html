@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joney108 Admin</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial;background:#ddd}
+header{background:#0b5d86;color:#fff;padding:15px;text-align:center}
+.box{background:#fff;margin:15px;padding:15px;border-radius:12px}
+input,select,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+button{
+background:#0b5d86;
+color:white;
+border:none;
+font-size:18px;
+}
+button:hover{background:#084866}
+#status{
+margin-top:15px;
+text-align:center;
+color:green;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Joney108 Admin Panel</h2>
+</header>
+
+<div class="box">
+
+<label>Episode Title</label>
+<input id="title" placeholder="যেমন: Episode 01">
+
+<label>Poster</label>
+<input id="poster" type="file" accept="image/*">
+
+<label>Video / ZIP</label>
+<input id="video" type="file" accept="video/*,.zip">
+
+<label>Quality</label>
+<select id="quality">
+<option>480p</option>
+<option>720p HD</option>
+<option>1080p Full HD</option>
+</select>
+
+<button onclick="uploadDemo()">Upload Episode</button>
+
+<p id="status"></p>
+
+</div>
+
+<script>
+function uploadDemo(){
+const t=document.getElementById("title").value;
+
+if(t==""){
+alert("Episode Title লিখুন");
+return;
+}
+
+document.getElementById("status").innerHTML=
+"✓ Demo Admin Panel Ready";
+}
+</script>
+
+</body>
+</html>
